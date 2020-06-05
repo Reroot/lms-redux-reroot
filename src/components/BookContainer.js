@@ -9,6 +9,16 @@ import * as bookActions from '../actions/bookActions';
 import BookRender from './BookRender';
 
 const BookContainer = (props) => {
+    // componentWillMount() {
+    //     this.props().postBook();
+    // }
+    //new
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.postBook()) {
+    //       this.props.books.unshift(nextProps.newPost);
+    //     }
+    // }
+
 
     useEffect(() => {
         const { actions } = props;

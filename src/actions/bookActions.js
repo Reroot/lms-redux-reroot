@@ -1,7 +1,7 @@
 
 import axios from 'axios'
-
-import { READ_BOOKS_SUCCESFUL, READ_BOOKS_FAILURE, READ_BOOKS_PENDING} from '../constants/actionTypes';
+//NEW POST IN
+import { READ_BOOKS_SUCCESFUL, NEW_POST, READ_BOOKS_FAILURE, READ_BOOKS_PENDING} from '../constants/actionTypes';
 
 export const readBooks = () => {
   return dispatch => {
@@ -15,9 +15,37 @@ export const readBooks = () => {
           console.log(error);
           dispatch(_readBookFailed(error));
       });
-
-
   };
+}
+
+//action to push a new book on the old state or api?
+export const postBook = (newBook) => {
+    return dispatch => {
+        dispatch(_readBookStarted());
+
+        return axios.get(`http://www.mocky.io/v2/5daca80c30000092002987ad`)
+        .then(res => {
+            
+            dispatch(_readBookSuccess(res).data.push(newBook));
+            //or
+            
+        })
+        .then(dispatch(postSuccess())
+        .catch( (error) => {
+            console.log(error);
+            dispatch(_readBookFailed(error));
+        });
+
+        
+    };
+  }
+
+
+const postSuccess = (res) => {
+    return {
+        type: NEW_POST,
+        data:  res.data
+    };
 }
 
 const _readBookSuccess = (res) => {

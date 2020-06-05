@@ -3,6 +3,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
+
+
+
 const BookRender = ({ bookData }) => {
 
     function createBookRow(book){
@@ -56,6 +60,11 @@ const BookRender = ({ bookData }) => {
     return(
         <div>
             <h1>Books</h1>
+            <input className="inputBook" 
+            value=""
+            name="" />
+            <button className="buttonBook" value="" onClick="">Post Book</button>
+            <p></p>
             {content}
         </div>
     );
