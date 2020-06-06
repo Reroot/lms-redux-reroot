@@ -1,0 +1,8 @@
+glup - package manage manager, uglyfing, prepare acid, host it in a opitimized way
+
+//redux func, lets use things more abstract, thunk allows for 
+
+//pure functions (reducers - ("departments")) -> get input with ref, it doesn't change the state, it's immutable. imply and returns a new copy.
+
+//provider tells us what we need, will not grow if you add 1000 reducers benfits of redux vs basic state react
+//redux is all props
